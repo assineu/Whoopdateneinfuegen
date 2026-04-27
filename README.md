@@ -1,6 +1,6 @@
 # Whoopdateneinfuegen
 
-Diese Repo enthält eine **Custom Integration für Home Assistant**, mit der du zentrale WHOOP-Werte (Recovery, Strain, Schlaf usw.) direkt als Sensoren bekommst.
+Diese Repo enthält eine **Custom Integration für Home Assistant**, mit der du zentrale WHOOP-Werte (Recovery, Strain, Schlaf usw.) als Sensoren anzeigen kannst.
 
 ## Enthalten
 
@@ -8,49 +8,44 @@ Diese Repo enthält eine **Custom Integration für Home Assistant**, mit der du 
 - `lovelace/whoop_dashboard.yaml`: Beispiel-Karten (Gauge + Entities + Verlauf)
 - `hacs.json`: HACS-Metadaten für die Installation als Custom Repository
 
-## 1) Integration installieren
+## 1) Installation
 
 ### Option A: Über HACS (empfohlen)
 
-1. Stelle sicher, dass HACS bereits in Home Assistant installiert ist.
-2. Öffne **HACS → Integrations → ⋮ (oben rechts) → Custom repositories**.
-3. Füge exakt diese Repository-URL ein und wähle als Kategorie **Integration**:
+1. Stelle sicher, dass HACS installiert ist.
+2. Öffne **HACS → Integrations → ⋮ → Custom repositories**.
+3. Füge diese URL als **Integration** hinzu:
    - `https://github.com/assineu/Whoopdateneinfuegen`
-4. Danach in HACS nach **WHOOP for Home Assistant** suchen und installieren.
-5. Home Assistant neu starten.
+4. Suche in HACS nach **WHOOP for Home Assistant** und installiere die Integration.
+5. Starte Home Assistant neu.
 
-#### Wenn bei HACS/GitHub ein 404 kommt
+#### HACS/GitHub 404 Fehler
 
-- Prüfe, ob die Repo unter genau dieser URL im Browser erreichbar ist.
-- Prüfe, ob die Repo **öffentlich** ist (private Repos liefern in HACS/API häufig 404).
-- Prüfe, ob du die URL korrekt geschrieben hast (kein Tippfehler im User oder Repo-Namen).
-- Wenn du die Repo umbenannt hast: in HACS das alte Custom Repository entfernen und neu hinzufügen.
+- Prüfe, ob die Repository-URL im Browser erreichbar ist.
+- Prüfe, ob die Repository öffentlich ist.
+- Prüfe User/Repo-Namen auf Tippfehler.
+- Wenn die Repo umbenannt wurde: altes Custom Repo aus HACS entfernen und neu hinzufügen.
 
 ### Option B: Manuell
 
-1. Kopiere den Ordner `custom_components/whoop` in dein Home-Assistant-Config-Verzeichnis.
+1. Kopiere `custom_components/whoop` in dein HA-Config-Verzeichnis.
 2. Starte Home Assistant neu.
 
-## 2) Integration in Home Assistant hinzufügen
+## 2) Integration einrichten
 
-1. Gehe zu **Einstellungen → Geräte & Dienste → Integration hinzufügen**.
-2. Suche nach **WHOOP**.
-3. Hinterlege:
+1. **Einstellungen → Geräte & Dienste → Integration hinzufügen**
+2. Nach **WHOOP** suchen
+3. Eingaben:
    - **API Token** (WHOOP Developer Token)
-   - **User-ID** optional (wird automatisch erkannt, falls leer)
+   - **User-ID** optional (wird automatisch erkannt, wenn leer)
 
-## 2b) User-ID verstehen
+## 3) User-ID Format
 
+- WHOOP `user_id` ist **numerisch** (Integer), z. B. `10129`.
+- Wenn das Feld leer bleibt, versucht die Integration die User-ID automatisch aus dem Token zu ermitteln.
+- Falls das fehlschlägt, trage die numerische User-ID manuell ein.
 
-### Format der User-ID
-
-- Die WHOOP `user_id` ist **numerisch** (Integer), z. B. `10129`.
-- Du kannst das Feld leer lassen; die Integration versucht die User-ID automatisch über dein Token zu ermitteln.
-- Wenn die automatische Erkennung fehlschlägt, trage die numerische User-ID manuell ein.
-
-## 3) Sensoren
-
-Die Integration legt u. a. folgende Sensoren an:
+## 4) Verfügbare Sensoren
 
 - `sensor.whoop_recovery`
 - `sensor.whoop_strain`
@@ -63,9 +58,9 @@ Die Integration legt u. a. folgende Sensoren an:
 
 Update-Intervall: alle 5 Minuten.
 
-## 4) Karten/Dashboard erstellen
+## 5) Dashboard/Karten
 
-Nutze die Datei `lovelace/whoop_dashboard.yaml` als Vorlage.
+Nutze `lovelace/whoop_dashboard.yaml` als Vorlage.
 
 ### Als neues Dashboard
 
@@ -75,10 +70,10 @@ Nutze die Datei `lovelace/whoop_dashboard.yaml` als Vorlage.
 
 ### In bestehender Ansicht
 
-- Eine Karte manuell hinzufügen (Gauge/Entities/History Graph)
-- Entity-IDs aus der YAML Vorlage übernehmen
+- Karten manuell hinzufügen (Gauge/Entities/History Graph)
+- Entity-IDs aus der Vorlage übernehmen
 
-## 5) Hinweise
+## 6) Hinweise
 
-- Wenn die Entitäten bei dir anders heißen (z. B. durch Sprach-/Namensänderungen), passe die IDs im Dashboard an.
-- Bei Auth-Fehlern Integration löschen und mit frischem Token neu anlegen.
+- Wenn Entitäten bei dir anders heißen, IDs im Dashboard anpassen.
+- Bei Auth-Fehlern Integration löschen und mit neuem Token neu einrichten.
