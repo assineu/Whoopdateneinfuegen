@@ -14,9 +14,17 @@ Diese Repo enthält eine **Custom Integration für Home Assistant**, mit der du 
 
 1. Stelle sicher, dass HACS bereits in Home Assistant installiert ist.
 2. Öffne **HACS → Integrations → ⋮ (oben rechts) → Custom repositories**.
-3. Füge diese Repository-URL ein und wähle als Kategorie **Integration**.
+3. Füge exakt diese Repository-URL ein und wähle als Kategorie **Integration**:
+   - `https://github.com/assineu/Whoopdateneinfuegen`
 4. Danach in HACS nach **WHOOP for Home Assistant** suchen und installieren.
 5. Home Assistant neu starten.
+
+#### Wenn bei HACS/GitHub ein 404 kommt
+
+- Prüfe, ob die Repo unter genau dieser URL im Browser erreichbar ist.
+- Prüfe, ob die Repo **öffentlich** ist (private Repos liefern in HACS/API häufig 404).
+- Prüfe, ob du die URL korrekt geschrieben hast (kein Tippfehler im User oder Repo-Namen).
+- Wenn du die Repo umbenannt hast: in HACS das alte Custom Repository entfernen und neu hinzufügen.
 
 ### Option B: Manuell
 
