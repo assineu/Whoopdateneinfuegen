@@ -1,0 +1,7 @@
+{
+  "name": "WHOOP for Home Assistant",
+  "render_readme": true,
+  "domains": ["sensor"],
+  "content_in_root": false,
+  "homeassistant": "2024.4.0"
+}

@@ -1,0 +1,20 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "WHOOP verbinden",
+        "description": "Gib dein WHOOP Developer API Token ein. Die User-ID ist optional und wird wenn möglich automatisch erkannt.",
+        "data": {
+          "api_token": "API Token",
+          "user_id": "User-ID (optional)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung mit der WHOOP API fehlgeschlagen.",
+      "cannot_resolve_user": "User-ID konnte nicht automatisch ermittelt werden. Bitte manuell eintragen.",
+      "invalid_user_id": "Die User-ID muss numerisch sein (z. B. 10129).",
+      "unknown": "Unbekannter Fehler"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+title: WHOOP
+views:
+  - title: Überblick
+    path: whoop
+    icon: mdi:arm-flex
+    badges: []
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: gauge
+            name: Recovery
+            entity: sensor.whoop_recovery
+            min: 0
+            max: 100
+            severity:
+              green: 67
+              yellow: 34
+              red: 0
+          - type: gauge
+            name: Strain
+            entity: sensor.whoop_strain
+            min: 0
+            max: 21
+            severity:
+              green: 0
+              yellow: 10
+              red: 16
+
+      - type: entities
+        title: WHOOP Tageswerte
+        show_header_toggle: false
+        entities:
+          - entity: sensor.whoop_sleep_performance
+            name: Schlaf-Performance
+          - entity: sensor.whoop_sleep_efficiency
+            name: Schlaf-Effizienz
+          - entity: sensor.whoop_resting_heart_rate
+            name: Ruhepuls
+          - entity: sensor.whoop_hrv
+            name: HRV
+          - entity: sensor.whoop_energy
+            name: Energie (kJ)
+          - entity: sensor.whoop_sleep_need
+            name: Schlafbedarf (h)
+
+      - type: history-graph
+        title: Verlauf (7 Tage)
+        hours_to_show: 168
+        refresh_interval: 0
+        entities:
+          - sensor.whoop_recovery
+          - sensor.whoop_strain
+          - sensor.whoop_sleep_performance
+          - sensor.whoop_resting_heart_rate
