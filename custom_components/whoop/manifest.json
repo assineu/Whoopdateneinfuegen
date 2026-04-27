@@ -1,0 +1,12 @@
+{
+  "domain": "whoop",
+  "name": "WHOOP",
+  "codeowners": ["@assineu"],
+  "config_flow": true,
+  "documentation": "https://github.com/assineu/Whoopdateneinfuegen",
+  "issue_tracker": "https://github.com/assineu/Whoopdateneinfuegen/issues",
+  "iot_class": "cloud_polling",
+  "loggers": ["custom_components.whoop"],
+  "requirements": [],
+  "version": "0.1.2"
+}

@@ -1,0 +1,18 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "WHOOP verbinden",
+        "description": "Gib dein WHOOP Developer API Token und deine User-ID ein.",
+        "data": {
+          "api_token": "API Token",
+          "user_id": "User-ID"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung mit der WHOOP API fehlgeschlagen.",
+      "unknown": "Unbekannter Fehler"
+    }
+  }
+}
